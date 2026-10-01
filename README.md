@@ -4,11 +4,8 @@
 
 <p>
   <a href="#">[Github repo]</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#">[Paper]</a> 
+  <a href="https://arxiv.org/pdf/2609.37519">[Paper]</a> 
 </p>
-
-<!-- Placeholder for Hero Image -->
-<img src="assets/hero_image_placeholder.png" width="500" alt="Video2STL Framework Overview">
 
 </div>
 
@@ -21,8 +18,7 @@ Video-based policy learning is particularly promising because it illustrates tar
 <br>
 
 <div align="center">
-<!-- Placeholder for Pipeline Image -->
-<img src="assets/pipeline_placeholder.png" width="800" alt="Video2STL Algorithm Pipeline">
+<img src="pipeline.png" width="800" alt="Video2STL Algorithm Pipeline">
 </div>
 
 <br>
@@ -126,9 +122,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/0.4.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/1.2.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/2.0.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -140,9 +136,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_0.4_walk.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_1.2_trot.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_2.0_bound.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_0.4_walk.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_1.2_trot.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_2.0_bound.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -154,9 +150,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_0p4.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_1p2.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_2p0.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_0p4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_1p2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_2p0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -168,9 +164,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-0.4.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-1.2.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-2.0.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -182,9 +178,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Heuristic/heur-0.4.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Heuristic/heur-1.2.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="quadruped_locomotion/Heuristic/heur-2.0.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -204,9 +200,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Text2Reward/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Native%20dense%20PPO/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Video2STL/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Text2Reward/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -218,9 +214,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Text2Reward/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Native%20dense%20PPO/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Video2STL/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Text2Reward/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -232,9 +228,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Text2Reward/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Native%20dense%20PPO/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Video2STL/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Text2Reward/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
@@ -246,10 +242,18 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Text2Reward/placesphere/failure.mp4" controls autoplay loop muted width="300"></video></td>
-    <td><video src="manipulation/Native%20dense%20PPO/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Video2STL/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Text2Reward/placesphere/failure.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: contain; background-color: #1a1a1a;"></video></td>
   </tr>
 </table>
 
 </div>
+
+<hr>
+
+## Citation
+
+  journal={Under review as a conference paper at ICLR 2027},
+  year={2026}
+}</code></pre>
