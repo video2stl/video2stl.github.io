@@ -254,5 +254,3 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
 
 ## Citation
 
-  year={2026}
-}</code></pre>
