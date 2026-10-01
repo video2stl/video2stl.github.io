@@ -16,7 +16,7 @@
 
 ## Abstract
 
-Video-based policy learning is particularly promising because it illustrates target behaviors without requiring action annotations or embodiment-matched demonstrations[cite: 1]. A central challenge is deciding what information should be transferred from the video to the robot, as existing approaches often make the temporal structure of a task difficult to inspect, ground, and reuse[cite: 1]. We present Video2STL, a framework that converts observation-only videos into parametric Signal Temporal Logic (STL) specifications and uses the resulting formal representation for robot learning[cite: 1]. A vision-language model first extracts an embodiment-independent semantic event trace and then constructs a bank of symbolic temporal specifications[cite: 1]. The model determines the task structure, while numerical predicate thresholds and temporal bounds are grounded from successful robot trajectories[cite: 1]. For policy learning, short-horizon specifications provide dense rewards through rolling-window quantitative robustness, while a causal monitor over a retained long-horizon specification provides one-time progress rewards for valid temporal prefixes[cite: 1]. Across four manipulation tasks, Video2STL achieves 85.8% average success-once and 67.0% success-at-end, compared with 81.5%/59.5% for native dense PPO and 65.0%/42.3% for Text2Reward[cite: 1]. In quadruped locomotion, Qwen-3.8 and GPT-5.6-based Video2STL policies achieve 100% success across velocities from 0.3 to 2.1 m/s while remaining competitive in high-speed energy efficiency[cite: 1]. 
+Video-based policy learning is particularly promising because it illustrates target behaviors without requiring action annotations or embodiment-matched demonstrations. A central challenge is deciding what information should be transferred from the video to the robot, as existing approaches often make the temporal structure of a task difficult to inspect, ground, and reuse. We present Video2STL, a framework that converts observation-only videos into parametric Signal Temporal Logic (STL) specifications and uses the resulting formal representation for robot learning. A vision-language model first extracts an embodiment-independent semantic event trace and then constructs a bank of symbolic temporal specifications. The model determines the task structure, while numerical predicate thresholds and temporal bounds are grounded from successful robot trajectories. For policy learning, short-horizon specifications provide dense rewards through rolling-window quantitative robustness, while a causal monitor over a retained long-horizon specification provides one-time progress rewards for valid temporal prefixes. Across four manipulation tasks, Video2STL achieves 85.8% average success-once and 67.0% success-at-end, compared with 81.5%/59.5% for native dense PPO and 65.0%/42.3% for Text2Reward. In quadruped locomotion, Qwen-3.8 and GPT-5.6-based Video2STL policies achieve 100% success across velocities from 0.3 to 2.1 m/s while remaining competitive in high-speed energy efficiency. 
 
 <br>
 
@@ -30,31 +30,31 @@ Video-based policy learning is particularly promising because it illustrates tar
 
 ## Methodology
 
-Our framework separates symbolic task inference from embodiment-specific grounding[cite: 3]. The pipeline consists of four main stages:
+Our framework separates symbolic task inference from embodiment-specific grounding. The pipeline consists of four main stages:
 
 ### 1. Event Extraction
-* A vision-language model (VLM) maps an observation-only video to an embodiment-independent semantic event trace[cite: 3]. 
-* The trace uses a global ontology to define task-relevant events and pairwise temporal relations without relying on robot-specific metrics[cite: 5].
+* A vision-language model (VLM) maps an observation-only video to an embodiment-independent semantic event trace. 
+* The trace uses a global ontology to define task-relevant events and pairwise temporal relations without relying on robot-specific metrics.
 
 ### 2. VLM STL Generation
-* A second VLM stage translates the semantic trace into a bank of parametric STL formulas[cite: 3, 5]. 
-* At this stage, numerical predicate thresholds and time constants are forbidden; only symbolic parameters are allowed[cite: 5].
+* A second VLM stage translates the semantic trace into a bank of parametric STL formulas. 
+* At this stage, numerical predicate thresholds and time constants are forbidden; only symbolic parameters are allowed.
 
 ### 3. Target-Embodiment Grounding & Expert-Consistency Filtering
-* Successful robot trajectories are split into a grounding set and a held-out filtering set[cite: 3, 6]. 
-* The grounding set is used to fit embodiment-specific numerical parameters and temporal bounds using empirical quantiles[cite: 6]. 
-* The held-out filtering set is used to evaluate each formula, ensuring that only specifications compatible with successful target-embodiment behaviors are retained[cite: 6].
+* Successful robot trajectories are split into a grounding set and a held-out filtering set. 
+* The grounding set is used to fit embodiment-specific numerical parameters and temporal bounds using empirical quantiles. 
+* The held-out filtering set is used to evaluate each formula, ensuring that only specifications compatible with successful target-embodiment behaviors are retained.
 
 ### 4. Two-Timescale Temporal Reward
-* **Short-horizon specifications:** Evaluated on a trailing window to provide dense, local policy feedback via smooth robustness[cite: 6, 7].
-* **Long-horizon specifications:** Monitored causally, yielding a one-time sparse progress reward when a new valid stage of the temporal sequence is reached without violating required order or deadlines[cite: 3, 7].
+* **Short-horizon specifications:** Evaluated on a trailing window to provide dense, local policy feedback via smooth robustness.
+* **Long-horizon specifications:** Monitored causally, yielding a one-time sparse progress reward when a new valid stage of the temporal sequence is reached without violating required order or deadlines.
 
 <hr>
 
 ## Experimental Results
 
 ### Quadruped Locomotion
-Evaluated on Google's Barkour vb quadruped in MuJoCo XLA (MJX) across a range of commanded forward velocities[cite: 8]. Policies are evaluated using 20 independent rollouts of 500 simulation steps[cite: 8]. Survival and velocity-tracking success are reported as percentages (higher is better), and CoT denotes cost of transportation (lower is better)[cite: 8].
+Evaluated on Google's Barkour vb quadruped in MuJoCo XLA (MJX) across a range of commanded forward velocities. Policies are evaluated using 20 independent rollouts of 500 simulation steps. Survival and velocity-tracking success are reported as percentages (higher is better), and CoT denotes cost of transportation (lower is better).
 
 <table>
   <thead>
@@ -86,7 +86,7 @@ Evaluated on Google's Barkour vb quadruped in MuJoCo XLA (MJX) across a range of
 <br>
 
 ### Robot Manipulation
-Evaluated in ManiSkill3 using native task success conditions across 128 episodes[cite: 8, 9]. We report "Success Once" (the condition is reached at least once) and "Success at End" (the condition is met in the final state)[cite: 9].
+Evaluated in ManiSkill3 using native task success conditions across 128 episodes. We report "Success Once" (the condition is reached at least once) and "Success at End" (the condition is met in the final state).
 
 <table>
   <thead>
@@ -126,9 +126,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-GPT/2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/0.4.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/1.2.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-GPT/2.0.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -140,9 +140,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_0.4_walk.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_1.2_trot.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_2.0_bound.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_0.4_walk.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_1.2_trot.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Qwen/barkour_vx_2.0_bound.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -154,9 +154,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_0p4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_1p2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_2p0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_0p4.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_1p2.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Video2STL-Gemini/speed_2p0.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -168,9 +168,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Text2Reward/text2rew-2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-0.4.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-1.2.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Text2Reward/text2rew-2.0.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -182,9 +182,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>v<sub>x</sub> = 2.0 m/s</b></td>
   </tr>
   <tr>
-    <td><video src="quadruped_locomotion/Heuristic/heur-0.4.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Heuristic/heur-1.2.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="quadruped_locomotion/Heuristic/heur-2.0.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-0.4.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-1.2.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="quadruped_locomotion/Heuristic/heur-2.0.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -204,9 +204,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Text2Reward/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Native dense PPO/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="manipulation/Video2STL/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Text2Reward/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/pushcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -218,9 +218,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Text2Reward/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Native dense PPO/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="manipulation/Video2STL/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Text2Reward/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/stackcube/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -232,9 +232,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Text2Reward/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Native dense PPO/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="manipulation/Video2STL/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Text2Reward/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/liftpegupright/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
@@ -246,9 +246,9 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
     <td align="center"><b>Native Dense PPO</b></td>
   </tr>
   <tr>
-    <td><video src="manipulation/Video2STL/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Text2Reward/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
-    <td><video src="manipulation/Native dense PPO/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300" height="225" style="object-fit: cover;"></video></td>
+    <td><video src="manipulation/Video2STL/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Text2Reward/placesphere/failure.mp4" controls autoplay loop muted width="300"></video></td>
+    <td><video src="manipulation/Native%20dense%20PPO/placesphere/success_once_and_end.mp4" controls autoplay loop muted width="300"></video></td>
   </tr>
 </table>
 
