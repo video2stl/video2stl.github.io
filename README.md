@@ -254,6 +254,5 @@ Evaluated in ManiSkill3 using native task success conditions across 128 episodes
 
 ## Citation
 
-  journal={Under review as a conference paper at ICLR 2027},
   year={2026}
 }</code></pre>
